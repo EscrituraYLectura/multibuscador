@@ -1,6 +1,10 @@
 <!doctype html>
 <head>
     <title>Multibuscador</title>
+    <style>
+    body {font-family: "Arial";}
+    li {margin: 20px 0;}
+    </style>
 </head>
 <body>
     <h1>Multibuscador</h1>
@@ -11,10 +15,10 @@
         <input type="submit" value="Buscar">
     </form>
     {% if result != "" %}
-    <ul>
-        {% for search in result %}
-        <li><a href="{{ search[0] }}">{{ request.form['title'] }}</a> en <b>{{ search[1] }}</b></li>
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for search in result %}
+            <li><a href="{{ search[0] }}">{{ request.form['title'] }}</a> en <b>{{ search[1] }}</b></li>
+            {% endfor %}
+        </ul>
     {% endif %}
 </body>
