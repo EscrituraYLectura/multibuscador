@@ -4,11 +4,17 @@
 </head>
 <body>
     <h1>Multibuscador</h1>
-    <h2>v. 1.0.0</h2>
+    <h2>v1.0.0</h2>
     <form method="post">
-        <label for="titulo">Título del libro:</label>
-        <input type="text" name="titulo" value="{{ request.form['titulo'] }}">
+        <label for="title">Título del libro:</label>
+        <input type="text" name="title" value="{{ request.form['title'] }}">
         <input type="submit" value="Buscar">
     </form>
-    <p>{{ busqueda }}</p>
+    {% if result != "" %}
+    <ul>
+        {% for search in result %}
+        <li><a href="{{ search[0] }}">{{ request.form['title'] }}</a> en <b>{{ search[1] }}</b></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </body>

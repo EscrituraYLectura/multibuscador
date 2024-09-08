@@ -1,4 +1,7 @@
 {
-    "legal": [],
-    "others": []
+    "archive.org": {
+        "url": "https://archive.org/search?query=|TITLEQUERYSPACE|&and%5B%5D=lending%3A%22is_readable%22&and%5B%5D=mediatype%3A%22texts%22",
+        "separator": "+",
+        "language": "all"
+    }
 }
