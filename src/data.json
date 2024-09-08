@@ -2,6 +2,41 @@
     "archive.org": {
         "url": "https://archive.org/search?query=|TITLEQUERYSPACE|&and%5B%5D=lending%3A%22is_readable%22&and%5B%5D=mediatype%3A%22texts%22",
         "separator": "+",
-        "language": "all"
+        "language": "many"
+    },
+    "elejandria.com": {
+        "url": "https://www.elejandria.com/buscar?q=|TITLEQUERYSPACE|&from=0",
+        "separator": "+",
+        "language": "spanish"
+    },
+    "es.wikisource.org": {
+        "url": "https://es.wikisource.org/wiki/|TITLEQUERYSPACE|",
+        "separator": "_",
+        "language": "spanish"
+    },
+    "gutenberg.org": {
+        "url": "https://www.gutenberg.org/ebooks/search/?query=|TITLEQUERYSPACE|&submit_search=Go%21",
+        "separator": "+",
+        "language": "many"
+    },
+    "pdf-libros.com": {
+        "url": "https://pdf-libros.com/?s=|TITLEQUERYSPACE|",
+        "separator": "+",
+        "language": "spanish"
+    },
+    "cervantesvirtual.com": {
+        "url": "https://www.cervantesvirtual.com/buscador/?tipo=palabras_todas&avanzada=1&busqueda=combinada&fformato=PDF&ttitulo=|TITLEQUERYSPACE|&orden=PONDERACION&limit=50",
+        "separator": "+",
+        "language": "many"
+    },
+    "textos.info": {
+        "url": "https://www.textos.info/buscar/|TITLEQUERYSPACE|?",
+        "separator": "%20",
+        "language": "spanish"
+    },
+    "libronube.com": {
+        "url": "https://www.libronube.com/dibros/?q1=|TITLEQUERYSPACE|&sin_filtrar=on",
+        "separator": "+",
+        "language": "spanish"
     }
 }
