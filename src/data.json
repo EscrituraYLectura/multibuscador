@@ -49,6 +49,11 @@
         "separator": "+",
         "language": "spanish"
     },
+    "pdfdrive.com": {
+        "url": "https://www.pdfdrive.com/search?q=|TITLEQUERYSPACE|&pagecount=&pubyear=&searchin=&em=0",
+        "separator": "+",
+        "language": "many"
+    },
     "google.com": {
         "url": "https://www.google.com/search?tbo=p&tbm=bks&q=intitle:|TITLEQUERYSPACE|&tbs=,bkv:f&num=100",
         "separator": "+intitle:",
