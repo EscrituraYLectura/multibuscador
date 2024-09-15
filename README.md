@@ -1,3 +1,3 @@
 # Multibuscador
 
-Buscador automático de libros en múltiples sitios web. 
+Buscador automático de libros en múltiples sitios web.
