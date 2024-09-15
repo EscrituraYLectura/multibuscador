@@ -2,22 +2,40 @@
 <head>
     <title>Multibuscador</title>
     <style>
-    body {font-family: "Arial";}
+    body {font-family: "Arial";display:grid;grid-template-columns: 3fr 1fr;}
     li {margin: 20px 0;}
     </style>
 </head>
 <body>
-    <h1>Multibuscador</h1>
-    <form method="post">
-        <label for="title">Título del libro:</label>
-        <input type="text" name="title" value="{{ request.form['title'] }}">
-        <input type="submit" value="Buscar">
-    </form>
-    {% if result != "" %}
+    <main>
+        <h1>Multibuscador</h1>
+        <form method="post">
+            <label for="title">Título del libro:</label>
+            <input type="text" name="title" value="{{ request.form['title'] }}">
+            <input type="submit" value="Buscar">
+        </form>
+        {% if result != "" %}
+            <ul>
+                {% for search in result %}
+                <li><a href="{{ search[0] }}">{{ request.form['title'] }}</a> en <b>{{ search[1] }}</b></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </main>
+    <aside>
+        <h2>Lo nuevo</h2>
         <ul>
-            {% for search in result %}
-            <li><a href="{{ search[0] }}">{{ request.form['title'] }}</a> en <b>{{ search[1] }}</b></li>
-            {% endfor %}
+            <li>
+                15/09/24 - Añadido <b>lectulandia.com</b>.
+            </li>
+            <li>
+                09/09/24 - Añadido <b>pdfdrive.com</b>.
+            </li>
+            <li>
+                08/09/24 - Añadido <b>archive.org</b>, <b>z-library.do</b>, <b>libronube.com</b>, <b>elejandria.com</b>,
+                <b>textos.info</b>, <b>pdf-libros.com</b>, <b>es.scribd.com</b>, <b>cervantesvirtual.com</b>, <b>gutenberg.org</b>,
+                <b>rae.es</b>, <b>google.com</b> y <b>es.wikisource.org</b>.
+            </li>
         </ul>
-    {% endif %}
+    </aside>
 </body>
