@@ -24,6 +24,11 @@
         "separator": "%20",
         "language": "spanish"
     },
+    "lectulandia.com": {
+        "url": "https://ww3.lectulandia.com/search/|TITLEQUERYSPACE|",
+        "separator": "+",
+        "language": "spanish"
+    },
     "pdf-libros.com": {
         "url": "https://pdf-libros.com/?s=|TITLEQUERYSPACE|",
         "separator": "+",
