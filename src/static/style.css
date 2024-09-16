@@ -21,7 +21,7 @@ li {
 }
 
 aside {
-    height: 90vh;
+    height: 95vh;
     overflow-y: auto;
     border-left: 2px solid gray;
     padding-left: 15px;
@@ -37,7 +37,6 @@ aside {
     }
 
     aside {
-        height: auto;
         margin-left: 15px;
     }
 }
