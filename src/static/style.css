@@ -1,0 +1,28 @@
+body {
+    font-family: "Arial";
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+h1 {
+    margin: 0 0 15px;
+}
+
+h2 {
+    margin: 0;
+}
+
+#results_list {
+    columns: 1;
+}
+
+li {
+    margin: 20px 0;
+}
+
+aside {
+    height: 50vh;
+    overflow-y: auto;
+    border-left: 2px solid gray;
+    padding-left: 15px;
+}

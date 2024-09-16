@@ -1,10 +1,7 @@
 <!doctype html>
 <head>
     <title>Multibuscador</title>
-    <style>
-    body {font-family: "Arial";display:grid;grid-template-columns: 3fr 1fr;}
-    li {margin: 20px 0;}
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <main>
@@ -15,7 +12,7 @@
             <input type="submit" value="Buscar">
         </form>
         {% if result != "" %}
-            <ul>
+            <ul id="results_list">
                 {% for search in result %}
                 <li><a href="{{ search[0] }}">{{ request.form['title'] }}</a> en <b>{{ search[1] }}</b></li>
                 {% endfor %}
