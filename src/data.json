@@ -49,6 +49,11 @@
         "separator": "+",
         "language": "many"
     },
+    "hathitrust.org": {
+        "url": "https://babel.hathitrust.org/cgi/ls?lmt=ft&a=srchls&adv=1&q1=|TITLEQUERYSPACE|&field1=ocr&anyall1=all&op1=AND&facet_format=format%3ABook&facet_format=format%3APhotographs+%26+Pictorial+Works&facet_format=format%3ANewspaper&facet_format=format%3AManuscript&facet_format=format%3AJournal&facet_format=format%3AEncyclopedias&facet_format=format%3ADictionaries&facet_format=format%3AUnknown&facet_format=format%3ASerial&facet_format=format%3AMaps-Atlas&facet_format=format%3AMap&facet_format=format%3ABiography&facet_format=format%3AMicroform",
+        "separator": "+",
+        "language": "many"
+    },
     "rae.es": {
         "url": "https://www.rae.es/biblioteca-digital/buscador?key=|TITLEQUERYSPACE|",
         "separator": "+",
