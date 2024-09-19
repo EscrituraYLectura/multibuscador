@@ -29,6 +29,16 @@
         "separator": "+",
         "language": "spanish"
     },
+    "epublibre.xyz": {
+        "url": "https://epublibre.xyz/search/|TITLEQUERYSPACE|/page/1",
+        "separator": "+",
+        "language": "spanish"
+    },
+    "epublibre.org": {
+        "url": "https://www.epublibre.org/catalogo/index/0/nuevo/disponibles/sin/todos/|TITLEQUERYSPACE|",
+        "separator": "%20",
+        "language": "spanish"
+    },
     "pdf-libros.com": {
         "url": "https://pdf-libros.com/?s=|TITLEQUERYSPACE|",
         "separator": "+",
