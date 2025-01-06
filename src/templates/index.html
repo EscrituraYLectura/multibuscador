@@ -14,20 +14,29 @@
         {% if result != "" %}
             <ul id="results_list">
                 {% for search in result %}
-                <li><a href="{{ search[0] }}">{{ request.form['title'] }}</a> en <b>{{ search[1] }}</b></li>
+                    <li>
+                        <a href="{{ search[0] }}">{{ request.form['title'] }}</a>
+                        en <b>{{ search[1] }}</b>
+                        {% if search[2] != "" %}
+                            <span title="{{ search[2] }}">ⓘ</span>
+                        {% endif %}
+                    </li>
                 {% endfor %}
             </ul>
         {% endif %}
         <br/>
         <footer>
-            <p>Sitios buenos sin URL de búsqueda: <a href="https://freeditorial.com"><b>freeditorial.com</b></a></p>
+            <p>
+                Sitios buenos sin URL de búsqueda:
+                <a href="https://freeditorial.com"><b>freeditorial.com</b></a>
+            </p>
         </footer>
     </main>
     <aside>
         <h2>Lo nuevo</h2>
         <ul>
             {% for entry in sidebar %}
-            <li><span class="{{ entry[2] }}">{{ entry[0] }}</span> - {{entry[1]}}.</li>
+                <li><span class="{{ entry[2] }}">{{ entry[0] }}</span> - {{entry[1]}}.</li>
             {% endfor %}
         </ul>
     </aside>

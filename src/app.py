@@ -22,7 +22,7 @@ def search(title):
 
     for name, content in json_data.items():
         links.append(
-            [content["url"].replace("|TITLEQUERYSPACE|", content["separator"].join(title.split())), name]
+            [content["url"].replace("|TITLEQUERYSPACE|", content["separator"].join(title.split())), name, content["tooltip"]]
         )
 
     return links
