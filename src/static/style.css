@@ -28,11 +28,11 @@ aside {
 }
 
 .url_change {
-    color: blue
+    color: blue;
 }
 
 .website_change {
-    color: green
+    color: green;
 }
 
 @media screen and (max-width: 1020px) {
