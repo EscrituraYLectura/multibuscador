@@ -17,7 +17,7 @@ def search(title):
     if title == "":
         return ""
 
-    with open("data.json", "r") as json_read:
+    with open("sites.json", "r") as json_read:
         json_data = json.load(json_read)
 
     for name, content in json_data.items():
