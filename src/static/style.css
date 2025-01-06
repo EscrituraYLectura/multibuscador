@@ -27,6 +27,14 @@ aside {
     padding-left: 15px;
 }
 
+.url_change {
+    color: blue
+}
+
+.website_change {
+    color: green
+}
+
 @media screen and (max-width: 1020px) {
     body {
         grid-template-columns: 1fr 1fr;

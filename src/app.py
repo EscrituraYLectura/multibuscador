@@ -8,7 +8,7 @@ def index(title=""):
     if request.method == "POST":
         title = request.form["title"]
 
-    return render_template("index.html", result=search(title))
+    return render_template("index.html", result=search(title), sidebar=news())
 
 
 def search(title):
@@ -26,3 +26,17 @@ def search(title):
         )
 
     return links
+
+
+def news():
+    news_list = []
+
+    with open("news.json", "r") as json_read:
+        json_data = json.load(json_read)
+
+    for date, content in json_data.items():
+        news_list.append(
+            [date, content["text"], content["type"]]
+        )
+
+    return news_list
