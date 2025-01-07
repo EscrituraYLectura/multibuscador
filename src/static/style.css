@@ -35,6 +35,10 @@ aside {
     color: green;
 }
 
+.more_info {
+    cursor: help;
+}
+
 @media screen and (max-width: 1020px) {
     body {
         grid-template-columns: 1fr 1fr;

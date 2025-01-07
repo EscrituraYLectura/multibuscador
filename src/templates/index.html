@@ -18,7 +18,7 @@
                         <a href="{{ search[0] }}">{{ request.form['title'] }}</a>
                         en <b>{{ search[1] }}</b>
                         {% if search[2] != "" %}
-                            <span title="{{ search[2] }}">ⓘ</span>
+                            <span title="{{ search[2] }}" class="more_info">ⓘ</span>
                         {% endif %}
                     </li>
                 {% endfor %}
