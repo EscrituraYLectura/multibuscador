@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <main>
+    <main id="searching_area">
         <h1>Multibuscador</h1>
-        <form method="post">
+        <form method="post" id="search_form">
             <label for="title">Título del libro:</label>
             <input type="text" name="title" value="{{ request.form['title'] }}">
             <input type="submit" value="Buscar">
@@ -25,14 +25,14 @@
             </ul>
         {% endif %}
         <br/>
-        <footer>
+        <footer id="additional_info">
             <p>
                 Sitios buenos sin URL de búsqueda:
                 <a href="https://freeditorial.com"><b>freeditorial.com</b></a>
             </p>
         </footer>
     </main>
-    <aside>
+    <aside id="news_area">
         <h2>Lo nuevo</h2>
         <ul>
             {% for entry in sidebar %}
