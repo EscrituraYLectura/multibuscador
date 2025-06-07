@@ -1,0 +1,116 @@
+{
+    "archive.org": {
+        "url": "https://archive.org/search?query=|TITLEQUERYSPACE|&and%5B%5D=lending%3A%22is_readable%22&and%5B%5D=mediatype%3A%22texts%22",
+        "separator": "+",
+        "tooltip": "",
+        "language": "many"
+    },
+    "z-lib.gs": {
+        "url": "https://z-lib.gs/s/|TITLEQUERYSPACE|",
+        "separator": "%20",
+        "tooltip": "Límite de 5 libros por día si no se tiene una cuenta; si se tiene, límite de 10 libros por día.",
+        "language": "many"
+    },
+    "libronube.com": {
+        "url": "https://www.libronube.com/dibros/?q1=|TITLEQUERYSPACE|&sin_filtrar=on",
+        "separator": "+",
+        "tooltip": "Límite de 3 libros por cada 20 días.",
+        "language": "spanish"
+    },
+    "elejandria.com": {
+        "url": "https://www.elejandria.com/buscar?q=|TITLEQUERYSPACE|&from=0",
+        "separator": "+",
+        "tooltip": "",
+        "language": "spanish"
+    },
+    "textos.info": {
+        "url": "https://www.textos.info/buscar/|TITLEQUERYSPACE|?",
+        "separator": "%20",
+        "tooltip": "",
+        "language": "spanish"
+    },
+    "lectulandia.com": {
+        "url": "https://ww3.lectulandia.com/search/|TITLEQUERYSPACE|",
+        "separator": "+",
+        "tooltip": "Usar el botón que sólo dice el formato.",
+        "language": "spanish"
+    },
+    "epage.pub": {
+        "url": "https://epage.pub/search/|TITLEQUERYSPACE|",
+        "separator": "+",
+        "tooltip": "",
+        "language": "many"
+    },
+    "ebookelo.com": {
+        "url": "https://ww2.ebookelo.com/search/|TITLEQUERYSPACE|/page/1",
+        "separator": "+",
+        "tooltip": "Usar el botón que sólo dice el formato.",
+        "language": "many"
+    },
+    "solucionarios.net": {
+        "url": "https://www.solucionarios.net/search/index.php#gsc.tab=0&gsc.q=|TITLEQUERYSPACE|",
+        "separator": "%20",
+        "tooltip": "Buscador de libros en varios sitios web.",
+        "language": "many"
+    },
+    "epublibre.xyz": {
+        "url": "https://epublibre.xyz/search/|TITLEQUERYSPACE|/page/1",
+        "separator": "+",
+        "tooltip": "Usar el botón que sólo dice el formato.",
+        "language": "spanish"
+    },
+    "epublibre.org": {
+        "url": "https://www.epublibre.org/catalogo/index/0/nuevo/disponibles/sin/todos/|TITLEQUERYSPACE|",
+        "separator": "%20",
+        "tooltip": "",
+        "language": "spanish"
+    },
+    "es.scribd.com": {
+        "url": "https://es.scribd.com/search?query=|TITLEQUERYSPACE|&ct_lang=0&filters=%7B%22filetype%22%3A%5B%22pdf%22%2C%22epub%22%5D%7D",
+        "separator": "+",
+        "tooltip": "Usar https://scribd.vpdfs.com/ para descargar.",
+        "language": "many"
+    },
+    "cervantesvirtual.com": {
+        "url": "https://www.cervantesvirtual.com/buscador/?tipo=palabras_todas&avanzada=1&busqueda=combinada&fformato=PDF&ttitulo=|TITLEQUERYSPACE|&orden=PONDERACION&limit=50",
+        "separator": "+",
+        "tooltip": "",
+        "language": "many"
+    },
+    "gutenberg.org": {
+        "url": "https://www.gutenberg.org/ebooks/search/?query=|TITLEQUERYSPACE|&submit_search=Go%21",
+        "separator": "+",
+        "tooltip": "",
+        "language": "many"
+    },
+    "hathitrust.org": {
+        "url": "https://babel.hathitrust.org/cgi/ls?lmt=ft&a=srchls&adv=1&q1=|TITLEQUERYSPACE|&field1=ocr&anyall1=all&op1=AND&facet_format=format%3ABook&facet_format=format%3APhotographs+%26+Pictorial+Works&facet_format=format%3ANewspaper&facet_format=format%3AManuscript&facet_format=format%3AJournal&facet_format=format%3AEncyclopedias&facet_format=format%3ADictionaries&facet_format=format%3AUnknown&facet_format=format%3ASerial&facet_format=format%3AMaps-Atlas&facet_format=format%3AMap&facet_format=format%3ABiography&facet_format=format%3AMicroform",
+        "separator": "+",
+        "tooltip": "",
+        "language": "many"
+    },
+    "rae.es": {
+        "url": "https://www.rae.es/biblioteca-digital/buscador?key=|TITLEQUERYSPACE|",
+        "separator": "+",
+        "tooltip": "",
+        "language": "spanish"
+    },
+    "pdfdrive.com": {
+        "url": "https://www.pdfdrive.com/search?q=|TITLEQUERYSPACE|&pagecount=&pubyear=&searchin=&em=0",
+        "separator": "+",
+        "tooltip": "",
+        "language": "many"
+    },
+    "google.com": {
+        "url": "https://www.google.com/search?tbo=p&tbm=bks&q=intitle:|TITLEQUERYSPACE|&tbs=,bkv:f&num=100",
+        "separator": "+intitle:",
+        "tooltip": "",
+        "language": "many"
+    },
+    "es.wikisource.org": {
+        "url": "https://es.wikisource.org/wiki/|TITLEQUERYSPACE|",
+        "separator": "_",
+        "tooltip": "",
+        "language": "spanish"
+    }
+}

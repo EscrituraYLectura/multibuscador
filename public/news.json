@@ -1,0 +1,50 @@
+{
+    "06/01/25": {
+        "text": "Añadido un icono de más información para el sitio web que la necesite",
+        "type": "website_change"
+    },
+    "05/01/25": {
+        "text": "Reemplazado z-library.do por z-lib.gs y añadido es.annas-archive.org",
+        "type": "url_change"
+    },
+    "01/01/25, 2": {
+        "text": "Añadido un pie de página con sitios web adicionales",
+        "type": "website_change"
+    },
+    "01/01/25, 1": {
+        "text": "Añadido infolibros.org",
+        "type": "url_change"
+    },
+    "31/12/24": {
+        "text": "Añadido epage.pub y ebookelo.com y solucionarios.net",
+        "type": "url_change"
+    },
+    "18/12/24": {
+        "text": "Eliminado pdf-libros.com",
+        "type": "url_change"
+    },
+    "19/09/24": {
+        "text": "Añadido epublibre.xyz y epublibre.org",
+        "type": "url_change"
+    },
+    "18/09/24": {
+        "text": "Añadido hathitrust.org",
+        "type": "url_change"
+    },
+    "15/09/24, 2": {
+        "text": "Añadida una barra lateral con noticias del sitio web",
+        "type": "website_change"
+    },
+    "15/09/24, 1": {
+        "text": "Añadido lectulandia.com",
+        "type": "url_change"
+    },
+    "09/09/24": {
+        "text": "Añadido pdfdrive.com",
+        "type": "url_change"
+    },
+    "08/09/24": {
+        "text": "Añadido archive.org, z-library.do, libronube.com, elejandria.com, textos.info, pdf-libros.com, es.scribd.com, cervantesvirtual.com, gutenberg.org, rae.es, google.com y es.wikisource.org",
+        "type": "url_change"
+    }
+}
