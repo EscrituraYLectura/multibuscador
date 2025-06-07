@@ -1,7 +1,95 @@
+'use client';
+
+import { useState, useEffect } from "react";
+
+type SearchResult = [string, string, string];
+type NewsEntry = [string, string, string];
+
 export default function Home() {
+  const [title, setTitle] = useState("");
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [news, setNews] = useState<NewsEntry[]>([]);
+
+  useEffect(() => {
+    fetch("/news.json")
+      .then(res => res.json())
+      .then(data => {
+        const entries: NewsEntry[] = Object.entries(data).map(
+          ([date, content]: any) => [date, content.text, content.type]
+        );
+        setNews(entries);
+      });
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (title.trim() === "") {
+      setResults([]);
+      return;
+    }
+
+    const res = await fetch("/sites.json");
+    const data = await res.json();
+
+    const links: SearchResult[] = Object.entries(data).map(([name, content]: any) => {
+      const joinedTitle = title.split(" ").join(content.separator);
+      const url = content.url.replace("|TITLEQUERYSPACE|", joinedTitle);
+      return [url, name, content.tooltip];
+    });
+
+    setResults(links);
+  };
+
   return (
-    <main>
-      <div>Next.js on GitHub Pages</div>
-    </main>
+    <div className="container">
+      <main id="searching_area">
+        <h1>Multibuscador</h1>
+        <form onSubmit={handleSubmit} id="search_form">
+          <label htmlFor="title">Título del libro: </label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input type="submit" value="Buscar" />
+        </form>
+
+        {results.length > 0 && (
+          <ul id="results_list">
+            {results.map((search, idx) => (
+              <li key={idx}>
+                <a href={search[0]} target="_blank" rel="noopener noreferrer">{title}</a>
+                {" "}en <b>{search[1]}</b>
+                {search[2] && (
+                  <span title={search[2]} className="more_info"> ⓘ</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <br />
+        <footer id="additional_info">
+          <p>
+            Sitios buenos sin URL de búsqueda:&nbsp;
+            <a href="https://freeditorial.com"><b>freeditorial.com</b></a>,{" "}
+            <a href="https://pdfcoffee.com"><b>pdfcoffee.com</b></a>
+          </p>
+        </footer>
+      </main>
+
+      <aside id="news_area">
+        <h2>Lo nuevo</h2>
+        <ul>
+          {news.map((entry, idx) => (
+            <li key={idx}>
+              <span className={entry[2]}>{entry[0]}</span> - {entry[1]}.
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
   );
 }

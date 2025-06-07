@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import '@/styles/global.css';
 
 export const metadata: Metadata = {
-  title: 'Next.js on GitHub Pages',
-  description: 'Deploy your static Next.js site to GitHub Pages.',
+  title: 'Multibuscador | Escritura y Lectura',
+  description: 'Sitio web oficial del servidor Escritura y Lectura.',
 };
 
 export default function RootLayout({
@@ -11,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body>{children}</body>
     </html>
   );
