@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 type SearchResult = [string, string, string];
@@ -68,64 +68,66 @@ export default function Home() {
   }, [title]);
 
   return (
-    <div className="container">
-      <main id="searching_area">
-        <h1>Multibuscador</h1>
-        <div id="search_form">
-          <label htmlFor="title">Título del libro:&nbsp;</label>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            value={title}
-            onChange={(e) => {
-              const newTitle = e.target.value;
-              setTitle(newTitle);
-              router.push(`/?search=${encodeURIComponent(newTitle)}`);
-            }}
-          />
-        </div>
-
-        {results.length > 0 && (
-          <ul id="results_list">
-            {results.map((search, index) => (
+    <Suspense>
+      <div className="container">
+        <main id="searching_area">
+          <h1>Multibuscador</h1>
+          <div id="search_form">
+            <label htmlFor="title">Título del libro:&nbsp;</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value={title}
+              onChange={(e) => {
+                const newTitle = e.target.value;
+                setTitle(newTitle);
+                router.push(`/?search=${encodeURIComponent(newTitle)}`);
+              }}
+            />
+          </div>
+            
+          {results.length > 0 && (
+            <ul id="results_list">
+              {results.map((search, index) => (
+                <li key={index}>
+                  <a href={search[0]}>{title}</a> en <b>{search[1]}</b>
+                  {search[2] !== "" && (
+                    <span title={search[2]} className="more_info">
+                      &nbsp;ⓘ
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+  
+          <br />
+          <footer id="additional_info">
+            <p>
+              Sitios buenos sin URL de búsqueda:{" "}
+              <a href="https://freeditorial.com">
+                <b>freeditorial.com</b>
+              </a>
+              ,{" "}
+              <a href="https://pdfcoffee.com">
+                <b>pdfcoffee.com</b>
+              </a>
+            </p>
+          </footer>
+        </main>
+        
+        <aside id="news_area">
+          <h2>Lo nuevo</h2>
+          <ul>
+            {news.map((entry, index) => (
               <li key={index}>
-                <a href={search[0]}>{title}</a> en <b>{search[1]}</b>
-                {search[2] !== "" && (
-                  <span title={search[2]} className="more_info">
-                    &nbsp;ⓘ
-                  </span>
-                )}
+                <span className={entry[2]}>{entry[0]}</span> - {entry[1]}.
               </li>
             ))}
           </ul>
-        )}
-
-        <br />
-        <footer id="additional_info">
-          <p>
-            Sitios buenos sin URL de búsqueda:{" "}
-            <a href="https://freeditorial.com">
-              <b>freeditorial.com</b>
-            </a>
-            ,{" "}
-            <a href="https://pdfcoffee.com">
-              <b>pdfcoffee.com</b>
-            </a>
-          </p>
-        </footer>
-      </main>
-
-      <aside id="news_area">
-        <h2>Lo nuevo</h2>
-        <ul>
-          {news.map((entry, index) => (
-            <li key={index}>
-              <span className={entry[2]}>{entry[0]}</span> - {entry[1]}.
-            </li>
-          ))}
-        </ul>
-      </aside>
-    </div>
+        </aside>
+      </div>
+    </Suspense>
   );
 }
