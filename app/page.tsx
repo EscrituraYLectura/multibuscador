@@ -21,31 +21,32 @@ export default function Home() {
       });
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  useEffect(() => {
     if (title.trim() === "") {
       setResults([]);
       return;
     }
 
-    const res = await fetch("/sites.json");
-    const data = await res.json();
-
-    const links: SearchResult[] = Object.entries(data).map(([name, content]: any) => {
-      const joinedTitle = title.split(" ").join(content.separator);
-      const url = content.url.replace("|TITLEQUERYSPACE|", joinedTitle);
-      return [url, name, content.tooltip];
-    });
-
-    setResults(links);
-  };
+    fetch("/sites.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const links: SearchResult[] = Object.entries(data).map(
+          ([name, content]: any) => {
+            const joinedTitle = title.split(" ").join(content.separator);
+            const url = content.url.replace("|TITLEQUERYSPACE|", joinedTitle);
+            return [url, name, content.tooltip];
+          }
+        );
+        setResults(links);
+      });
+  }, [title]);
 
   return (
     <div className="container">
       <main id="searching_area">
         <h1>Multibuscador</h1>
-        <form onSubmit={handleSubmit} id="search_form">
-          <label htmlFor="title">Título del libro: </label>
+        <div id="search_form">
+          <label htmlFor="title">Título del libro:&nbsp;</label>
           <input
             type="text"
             name="title"
@@ -53,17 +54,17 @@ export default function Home() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <input type="submit" value="Buscar" />
-        </form>
+        </div>
 
         {results.length > 0 && (
           <ul id="results_list">
-            {results.map((search, idx) => (
-              <li key={idx}>
-                <a href={search[0]} target="_blank" rel="noopener noreferrer">{title}</a>
-                {" "}en <b>{search[1]}</b>
-                {search[2] && (
-                  <span title={search[2]} className="more_info"> ⓘ</span>
+            {results.map((search, index) => (
+              <li key={index}>
+                <a href={search[0]}>{title}</a> en <b>{search[1]}</b>
+                {search[2] !== "" && (
+                  <span title={search[2]} className="more_info">
+                    &nbsp;ⓘ
+                  </span>
                 )}
               </li>
             ))}
@@ -73,9 +74,14 @@ export default function Home() {
         <br />
         <footer id="additional_info">
           <p>
-            Sitios buenos sin URL de búsqueda:&nbsp;
-            <a href="https://freeditorial.com"><b>freeditorial.com</b></a>,{" "}
-            <a href="https://pdfcoffee.com"><b>pdfcoffee.com</b></a>
+            Sitios buenos sin URL de búsqueda:{" "}
+            <a href="https://freeditorial.com">
+              <b>freeditorial.com</b>
+            </a>
+            ,{" "}
+            <a href="https://pdfcoffee.com">
+              <b>pdfcoffee.com</b>
+            </a>
           </p>
         </footer>
       </main>
@@ -83,8 +89,8 @@ export default function Home() {
       <aside id="news_area">
         <h2>Lo nuevo</h2>
         <ul>
-          {news.map((entry, idx) => (
-            <li key={idx}>
+          {news.map((entry, index) => (
+            <li key={index}>
               <span className={entry[2]}>{entry[0]}</span> - {entry[1]}.
             </li>
           ))}

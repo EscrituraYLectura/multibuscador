@@ -12,6 +12,10 @@ h2 {
     margin: 0;
 }
 
+#title {
+    width: 25rem;
+}
+
 #results_list {
     columns: 2;
 }
