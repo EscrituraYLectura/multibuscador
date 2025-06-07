@@ -1,4 +1,8 @@
 {
+    "07/06/25": {
+        "text": "Migrada la página a GitHub Pages, usando ahora Next.js",
+        "type": "website_change"
+    },
     "06/01/25": {
         "text": "Añadido un icono de más información para el sitio web que la necesite",
         "type": "website_change"
