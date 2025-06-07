@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import '@/styles/global.css';
 
@@ -13,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <Suspense>
+          {children}
+        </Suspense>
+      </body>
     </html>
   );
 }
