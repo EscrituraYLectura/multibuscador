@@ -71,6 +71,12 @@
         "tooltip": "Usar https://scribd.vpdfs.com/ para descargar.",
         "language": "many"
     },
+    "zoboko.com": {
+        "url": "https://zoboko.com/search/|TITLEQUERYSPACE|",
+        "separator": "+",
+        "tooltip": "",
+        "language": "many"
+    },
     "cervantesvirtual.com": {
         "url": "https://www.cervantesvirtual.com/buscador/?tipo=palabras_todas&avanzada=1&busqueda=combinada&fformato=PDF&ttitulo=|TITLEQUERYSPACE|&orden=PONDERACION&limit=50",
         "separator": "+",
